@@ -8,6 +8,8 @@ const User = require('../models/users');
 const userFacebook = require('./loginByFacebook');
 const userGoogle = require('./loginByGoogle');
 const googleMiddleware = require('../middleWares/googleAuthMiddleware');
+const PORT = require('../../config/port');
+const localHost = require('../../config/localHost');
 
 
 userFacebook();
@@ -117,7 +119,7 @@ router.get('/login/google', passport.authenticate('google', {
 
 
 router.get('/login/google/callback', (req, res) => {
-     res.redirect('http://localhost:3000/products')
+     res.redirect( `http://${localHost}:${PORT}/users/login/facebook/callback`)
 });
 
 module.exports = router;

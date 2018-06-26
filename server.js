@@ -1,9 +1,9 @@
 const http = require('http'); //получаем модуль http, который необходим для создания сервера. Это встроенный модуль, и для его загрузки необходимо применить функцию require():
+const PORT = require('./config/port');
 
 const app = require('./app'); //Для загрузки модулей применяется функция require(), в которую передается название модуля. 
 // const MongoClient = require('mongodb').MongoClient;
 const db = require('./config/db')
-const PORT = process.env.PORT || 5000
 //Mongoose представляет специальную ODM-библиотеку (Object Data Modelling) для работы с MongoDB, которая позволяет сопоставлять объекты классов и документы коллекций из базы данных
 const mongoose = require('mongoose');
 //В отличие от таблиц в реляционных системах, где все данные хранятся в виде строк, в коллекциях в MongoDB данные хранятся в виде документов
