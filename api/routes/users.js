@@ -119,7 +119,7 @@ router.get('/login/google', passport.authenticate('google', {
 
 
 router.get('/login/google/callback', (req, res) => {
-     res.redirect(localHost+`:${PORT}/users/login/facebook/callback`)
+     res.redirect(`http://infinite-ridge-68592.herokuapp.com:${PORT}/users/login/facebook/callback`)
 });
 
 module.exports = router;
