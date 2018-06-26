@@ -3,7 +3,7 @@ const express = require('express');
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
 const User = require('../models/users');
-const port = require('../../config/port');
+const PORT = require('../../config/port');
 const localHost = require('../../config/localHost');
 const userFacebook = () => {
      passport.use(new FacebookStrategy({
