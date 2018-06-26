@@ -119,7 +119,7 @@ router.get('/login/google', passport.authenticate('google', {
 
 
 router.get('/login/google/callback', (req, res) => {
-     res.redirect( `http://${localHost}:${PORT}/users/login/facebook/callback`)
+     res.redirect(localHost+`:${PORT}/users/login/facebook/callback`)
 });
 
 module.exports = router;
