@@ -8,7 +8,7 @@ const User = require('../models/users');
 const userFacebook = require('./loginByFacebook');
 const userGoogle = require('./loginByGoogle');
 const googleMiddleware = require('../middleWares/googleAuthMiddleware');
-const PORT = require('../../config/port');
+const port = require('../../config/port');
 const localHost = require('../../config/localHost');
 
 
@@ -119,7 +119,7 @@ router.get('/login/google', passport.authenticate('google', {
 
 
 router.get('/login/google/callback', (req, res) => {
-     res.redirect(`http://infinite-ridge-68592.herokuapp.com:${PORT.PORT}/users/login/facebook/callback`)
+     res.redirect(`http://infinite-ridge-68592.herokuapp.com:${port.port}/users/login/facebook/callback`)
 });
 
 module.exports = router;
