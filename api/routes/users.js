@@ -108,7 +108,7 @@ router.get('/', function (req, res, next) {
 router.get('/login/facebook', passport.authenticate('facebook'));
 
 router.get('/login/facebook/callback', (req, res) => {
-  res.send('You are wellcome to facebook')
+  res.redirect(`../../routes/products/`)
 });
 
 router.get('/login/google', passport.authenticate('google', {
@@ -116,7 +116,7 @@ router.get('/login/google', passport.authenticate('google', {
 }));
 
 router.get('/login/google/callback', (req, res) => {
-  res.redirect(`./../routes/products.js`)
+  res.redirect(`../../routes/products/`)
 });
 //здесь ап вместо роут
 // router.get('/login/google/callback', 

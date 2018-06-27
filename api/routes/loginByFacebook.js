@@ -5,6 +5,8 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 const User = require('../models/users');
 const PORT = require('../../config/port');
 const localHost = require('../../config/localHost');
+const Social = require('../models/socilalUsers');
+
 const userFacebook = () => {
      passport.use(new FacebookStrategy({
           clientID: 1898036960240703,
@@ -13,15 +15,15 @@ const userFacebook = () => {
      }, (req, accessToken, refreshToken, profile, done) => {
           console.log('qwe', profile);
           let data = profile._json; //статический объект, это свойство которое хранит 
-          User
+          Social
                .findOne({
-                    email: data.email,
+                    id: data.id,
                })
                .exec()
                .then(user => {
                     if (!user) {
                          const user = new User({
-                              email: data.email,
+                              id: data.id,
                          });
                     }
                })
