@@ -106,7 +106,8 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/login/facebook', passport.authenticate('facebook'));
-router.get('/login/facebook/callback', passport.authenticate('facebook'), (req, res) => {
+
+router.get('/login/facebook/callback', (req, res) => {
   res.send('You are wellcome to facebook')
 });
 
